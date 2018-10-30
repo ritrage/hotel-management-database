@@ -1,0 +1,15 @@
+package hotel.management.database;
+
+/**
+ * @author Ritwik 4
+ * @author Hitesh 3
+ * @author Souryaansh 1
+ * @author Rahul 2
+ */
+public class HotelManagementDatabase {
+    
+    public static void main(String[] args) {
+        
+    }
+    
+}
