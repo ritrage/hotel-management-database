@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hotel.management.database;
+
+/**
+ *
+ * @author Ritwik
+ */
+
+public class CancelationModification {
+    public static boolean booked = true;
+    public static int amountPayable = 0;
+    public static int costOfHotelRoom;
+    public static int numberOfDaysInHotel;
+    public static void cancelation(int daysLeft) {
+        /**
+         * cancelation of booking when more than 3 days are left
+         * total amount payable = 0
+         */
+        if(daysLeft>=3 && booked==true) {
+            booked = false;
+            ///message of cancelation done
+            System.out.println("Your booking to hotel xyz was cancelled. Thanks for using our portal!!!");
+        }
+        else if(daysLeft<3 && booked==true) {
+            booked=false;
+            amountPayable = (costOfHotelRoom*numberOfDaysInHotel)/2;
+            /// message of cancelation done with amount to pay
+            System.out.println("Your booking to hotel xyz was cancelled.\nAmount payable is: "+amountPayable+"\nThanks for using our portal!!!");
+        }
+        else{
+            ///display the message of unable to process request. Please check and contact your hotel for booking infos
+            System.out.println("There was a problem parsing your request further!\nSorry for the inconvinence");
+        }
+    }
+    
+}
