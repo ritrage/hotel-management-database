@@ -1,1 +1,1 @@
-(username) -> (hotel name) -> (booking id) -> (booked for date) -> (no. of rooms booked)
+(username) -> (hotel name) -> (booking id) -> (booked for date(s)) -> (no. of rooms booked) -> (charge of 1 room for 1 day/night)
