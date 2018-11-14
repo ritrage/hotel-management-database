@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class Main
+{
+    
+    public static int increment(int y, int m , int d) {
+        if(m == 2) {
+            if(d!=28) {
+                d++;
+            }
+            else {
+                d=1;
+                m++;
+            }
+        }
+        else if(m==4 || m==6 || m==9 || m==11) {
+            if(d!=30) {
+                d++;
+            }
+            else {
+                d=1;
+                m++;
+            }
+        }
+        else if(m!=12) {
+            if(d!=31) {
+                d++;
+            }
+            else {
+                d=1;
+            }
+        }
+        else {
+            if(d!=31) {
+                d++;
+            }
+            else {
+                d=1;
+                m = 1;
+                y++;
+            }
+        }
+        return y*10000 + m*100 + d;
+    }
+    
+    public static int checkNincrement(int y, int m, int d) {
+        if(y==2018) {
+            if(m==11) {
+                if(d>15) {
+                    return increment(y,m,d);
+                }
+            }
+            else if(m==12) {
+                return increment(y,m,d);
+            }
+        }
+        else if(y==2019) {
+            return increment(y,m,d);
+        }
+        return 0;
+    }
+    
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int ymd = in.nextInt();
+        int d = ymd%100;
+        ymd = ymd/100;
+        int m = ymd%100;
+        ymd = ymd/100;
+        int y = ymd;
+        int newy = checkNincrement(y,m,d);
+        if(newy!=0) {
+            System.out.println(newy);
+        }
+        else {
+            System.out.println("Booking not available from this date NIBBA");
+        }
+	}
+}
