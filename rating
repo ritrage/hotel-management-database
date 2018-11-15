@@ -1,0 +1,15 @@
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in = new Scanner(System.in);
+	    int rating = in.nextInt();
+	    float initrating = in.nextFloat();
+	    int totalUsersWhoRated = in.nextInt();
+	    initrating = (initrating*totalUsersWhoRated - rating)/(totalUsersWhoRated+1);
+	    System.out.printf("%.1f",initrating);
+	    totalUsersWhoRated++;
+	}
+}
